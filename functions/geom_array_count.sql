@@ -1,0 +1,10 @@
+CREATE OR REPLACE FUNCTION ext.geom_array_count(IN ar CHARACTER VARYING)
+RETURNS BIGINT
+AS
+$BODY$
+BEGIN
+    RETURN COALESCE(array_length(ar, 1), 0);
+END;
+$BODY$
+LANGUAGE  plpgsql;
+

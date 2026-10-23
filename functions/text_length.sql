@@ -1,0 +1,10 @@
+CREATE OR REPLACE FUNCTION ext.text_length(IN a TEXT)
+RETURNS BIGINT
+AS
+$BODY$
+BEGIN
+    RETURN length(lob_loc => a);
+END;
+$BODY$
+LANGUAGE  plpgsql IMMUTABLE;
+
