@@ -1,0 +1,21 @@
+alter table ext.animal_cas_flext1 add constraint animal_cas_flext1 foreign key (element_subnational_id) references core.taxon_subnational (element_subnational_id) on delete cascade;
+alter table ext.community_sub_flext1 add constraint community_sub_flext1 foreign key (element_subnational_id) references core.community_subnational (element_subnational_id) on delete cascade;
+alter table ext.eo_ext_misc_ind add constraint eo_ext_misc_ind_prev_est foreign key (d_prev_est_available_id) references ext.d_prev_est_available (d_prev_est_available_id);
+alter table ext.eo_ext_misc_ind add constraint eo_ext_misc_ind_eo_fk foreign key (eo_id) references core.eo (eo_id) on delete cascade;
+alter table ext.eo_flext1 add constraint eo_flext1_d_community_variant foreign key (d_community_variant_id) references ext.d_community_variant (d_community_variant_id);
+alter table ext.eo_flext1 add constraint eo_flext1_d_version_funding foreign key (d_version_funding_id) references ext.d_version_funding (d_version_funding_id);
+alter table ext.eo_flext1 add constraint eo_flext1 foreign key (eo_id) references core.eo (eo_id) on delete cascade;
+alter table ext.eo_flext2 add constraint eo_flext2 foreign key (eo_id) references core.eo (eo_id) on delete cascade;
+alter table ext.ma_flext1 add constraint ma_flext1 foreign key (ma_id) references core.ma (managed_area_id) on delete cascade;
+alter table ext.ma_flext2 add constraint ma_flext2 foreign key (ma_id) references core.ma (managed_area_id) on delete cascade;
+alter table ext.previous_pop_size add constraint prev_pop_size_est_precision foreign key (d_estimate_precision_id) references ext.d_estimate_precision (d_estimate_precision_id);
+alter table ext.previous_pop_size add constraint previous_pop_size_eo_fk foreign key (eo_id) references core.eo (eo_id) on delete cascade;
+alter table ext.site_flext1 add constraint site_flext1_d_flext_ff_cat foreign key (d_flext_ff_category_id) references ext.d_flext_ff_category (d_flext_ff_category_id);
+alter table ext.site_flext1 add constraint site_flext1_d_flext_priority foreign key (d_flext_priority_id) references ext.d_flext_priority (d_flext_priority_id);
+alter table ext.site_flext1 add constraint site_flext1 foreign key (site_id) references core.conservation_site (conservation_site_id) on delete cascade;
+alter table ext.source_feature_flext1 add constraint source_feat_flext1_d_sf_rank foreign key (d_source_feature_rank_id) references ext.d_source_feature_rank (d_source_feature_rank_id);
+alter table ext.source_feature_flext1 add constraint source_feature_flext1_sf foreign key (source_feature_id) references core.source_feature (source_feature_id) on delete cascade;
+alter table ext.source_feature_flext2 add constraint source_feature_flext2_ref foreign key (reference_code) references core.reference (reference_code) on delete cascade;
+alter table ext.source_feature_flext2 add constraint source_feature_flext2_sf foreign key (source_feature_id) references core.source_feature (source_feature_id) on delete cascade;
+alter table ext.taxon_sub_flext1 add constraint taxon_sub_flext1_et foreign key (element_subnational_id) references core.taxon_subnational (element_subnational_id) on delete cascade;
+
